@@ -12,6 +12,7 @@ class CitizenFullSeeder extends Seeder
         Citizen::factory()
             ->count(100)
             ->hasDriverLicenses(rand(1, 2))
+            ->hasPassport()
             ->hasVehicles(rand(1, 3))
             ->create();
     }

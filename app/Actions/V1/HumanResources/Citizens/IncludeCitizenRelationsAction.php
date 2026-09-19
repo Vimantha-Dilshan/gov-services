@@ -2,7 +2,6 @@
 
 namespace App\Actions\V1\HumanResources\Citizens;
 
-use App\Models\Citizen;
 use Closure;
 
 class IncludeCitizenRelationsAction
@@ -16,6 +15,10 @@ class IncludeCitizenRelationsAction
 
         if (in_array('driversLicense', $include)) {
             $relations[] = 'driverLicenses';
+        }
+
+        if (in_array('passport', $include)) {
+            $relations[] = 'passport';
         }
 
         if (in_array('vehicles', $include)) {

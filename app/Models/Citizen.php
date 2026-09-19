@@ -2,9 +2,11 @@
 
 namespace App\Models;
 
+use App\Models\Passport;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Citizen extends Model
 {
@@ -71,6 +73,11 @@ class Citizen extends Model
     public function driverLicenses(): HasMany
     {
         return $this->hasMany(DriverLicense::class);
+    }
+
+    public function passport(): HasOne
+    {
+        return $this->hasOne(Passport::class);
     }
 
     public function vehicles(): HasMany

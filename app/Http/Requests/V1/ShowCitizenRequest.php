@@ -24,6 +24,7 @@ class ShowCitizenRequest extends FormRequest
                 'nullable',
                 Rule::in([
                     'driversLicense',
+                    'passport',
                     'vehicles',
                     'policeRecords',
                 ]),
