@@ -13,6 +13,7 @@ class CitizenFullSeeder extends Seeder
             ->count(100)
             ->hasDriverLicenses(rand(1, 2))
             ->hasPassport()
+            ->hasPoliceRecords(rand(1, 2))
             ->hasVehicles(rand(1, 3))
             ->create();
     }

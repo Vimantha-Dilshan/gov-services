@@ -22,8 +22,7 @@ class DatabaseSeeder extends Seeder
         );
 
         $this->call([
-            CitizenFullSeeder::class,
-            VehicleSeeder::class,
+            CitizenFullSeeder::class
         ]);
     }
 }

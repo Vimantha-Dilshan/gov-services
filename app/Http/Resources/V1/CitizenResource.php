@@ -3,6 +3,7 @@
 namespace App\Http\Resources\V1;
 
 use App\Http\Resources\V1\PassportResource;
+use App\Http\Resources\V1\PoliceRecordResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Str;
@@ -38,6 +39,12 @@ class CitizenResource extends JsonResource
                 in_array('passport', is_array($request->include) ? $request->include : explode(',', $request->include ?? '')),
                 [
                     'passport' => new PassportResource($this->whenLoaded('passport')),
+                ]
+            ),
+            $this->mergeWhen(
+                in_array('policeRecords', is_array($request->include) ? $request->include : explode(',', $request->include ?? '')),
+                [
+                    'policeRecords' => PoliceRecordResource::collection($this->whenLoaded('policeRecords')),
                 ]
             ),
             $this->mergeWhen(

@@ -21,6 +21,10 @@ class IncludeCitizenRelationsAction
             $relations[] = 'passport';
         }
 
+        if (in_array('policeRecords', $include)) {
+            $relations[] = 'policeRecords';
+        }
+
         if (in_array('vehicles', $include)) {
             $relations[] = 'vehicles';
             $relations[] = 'vehicles.etc';

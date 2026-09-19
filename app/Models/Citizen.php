@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Passport;
+use App\Models\PoliceRecord;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -73,6 +74,11 @@ class Citizen extends Model
     public function driverLicenses(): HasMany
     {
         return $this->hasMany(DriverLicense::class);
+    }
+
+    public function policeRecords(): HasMany
+    {
+        return $this->hasMany(PoliceRecord::class);
     }
 
     public function passport(): HasOne
