@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\V1;
 
-use App\Actions\V1\HumanResources\Citizens\FetchCitizenAction;
-use App\Actions\V1\HumanResources\Citizens\IncludeCitizenRelationsAction;
+use App\Actions\V1\HumanResources\Citizens\FetchCitizen;
+use App\Actions\V1\HumanResources\Citizens\IncludeRelations;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\V1\ShowCitizenRequest;
 use App\Http\Resources\V1\CitizenResource;
@@ -20,8 +20,8 @@ class CitizenController extends Controller
                 'include' => $request->input('include', default: [])
             ])
             ->through([
-                FetchCitizenAction::class,
-                IncludeCitizenRelationsAction::class,
+                FetchCitizen::class,
+                IncludeRelations::class,
             ])
             ->thenReturn();
 

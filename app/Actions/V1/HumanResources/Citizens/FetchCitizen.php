@@ -5,7 +5,7 @@ namespace App\Actions\V1\HumanResources\Citizens;
 use App\Models\Citizen;
 use Closure;
 
-class FetchCitizenAction
+class FetchCitizen
 {
     public function handle(array $payload, Closure $next)
     {

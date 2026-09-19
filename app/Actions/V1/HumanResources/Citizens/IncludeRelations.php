@@ -4,7 +4,7 @@ namespace App\Actions\V1\HumanResources\Citizens;
 
 use Closure;
 
-class IncludeCitizenRelationsAction
+class IncludeRelations
 {
     public function handle(array $payload, Closure $next)
     {
